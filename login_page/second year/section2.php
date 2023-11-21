@@ -2,7 +2,7 @@
 
 @include 'config.php';
 
-if(isset($_POST['fourth year'])){
+if(isset($_POST['second year'])){
 
    $teacher = $_POST['teacher'];
    $section = $_POST['section'];
@@ -27,7 +27,7 @@ if(isset($_GET['delete'])){
    mysqli_query($conn, "DELETE FROM `section d` WHERE id = $id");
    mysqli_query($conn, "DELETE FROM `section e` WHERE id = $id");
    mysqli_query($conn, "DELETE FROM `section f` WHERE id = $id");
-   header('location:section.php');
+   header('location:section2.php');
 };
 
 ?>
@@ -41,11 +41,11 @@ if(isset($_GET['delete'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>admin page</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <link rel="stylesheet" href="section.css">
+   <link rel="stylesheet" href="section2.css">
 
 </head>
 <body>
-<div class="video-background">
+   <div class="video-background">
     <video autoplay loop muted>
       <source src="classroom vid.mp4" type="video/mp4">
     </video>
@@ -65,7 +65,11 @@ if(isset($_GET['delete'])){
           </div>
        </div>
  </form>
- <H1 style="font-size: 50px;">FIRST SEM</H1>
+ <form action="" method="post">
+     <button class="custom-btn btn-12" name="back"><span>okey😊</span><span>back</span></button>
+     <button class="custom-btn btn-12" name="logout"><span>bye😊</span><span>logout</span></button>
+  </form>
+
   <form action="" method="post">
      <div class="box">
          <?php
@@ -73,9 +77,9 @@ if(isset($_GET['delete'])){
          $select = mysqli_query($conn, "SELECT * FROM `section a`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION A</H1>
+            <H2> SECTION A</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -95,20 +99,20 @@ if(isset($_GET['delete'])){
                <td><?php echo $row['room']; ?></td>
                <td>
                   <a href="section_update.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
-                  <a href="section.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                  <a href="section2.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
                </td>
             </tr>
          <?php } ?>
          </table><br>
-            <a class="customize" href="customize.php">customize</a>
+            <a class="customize" href="second year/customize.php">customize</a>
          </div>
 
          <?php      
          $select = mysqli_query($conn, "SELECT * FROM `section b`");
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION B</H1>
+            <H2> SECTION B</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -128,20 +132,20 @@ if(isset($_GET['delete'])){
                <td><?php echo $row['room']; ?></td>
                <td>
                   <a href="section_update sB.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
-                  <a href="section.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                  <a href="section2.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
                </td>
             </tr>
          <?php } ?>
          </table><br>
-            <a class="customize" href="customize sB.php">customize</a>
+            <a class="customize" href="second year/customize sB.php">customize</a>
          </div>
 
          <?php      
          $select = mysqli_query($conn, "SELECT * FROM `section c`");
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION c</H1>
+            <H2> SECTION C</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -161,21 +165,21 @@ if(isset($_GET['delete'])){
                <td><?php echo $row['room']; ?></td>
                <td>
                   <a href="section_update sC.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
-                  <a href="section.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                  <a href="section2.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
                </td>
             </tr>
          <?php } ?>
          </table><br>
-            <a class="customize" href="customize sC.php">customize</a>
+            <a class="customize" href="second year/customize sC.php">customize</a>
          </div>
         <?php
          
          $select = mysqli_query($conn, "SELECT * FROM `section d`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION D</H1>
+            <H2> SECTION D</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -195,21 +199,21 @@ if(isset($_GET['delete'])){
                <td><?php echo $row['room']; ?></td>
                <td>
                   <a href="section_update sD.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
-                  <a href="section.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                  <a href="section2.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
                </td>
             </tr>
          <?php } ?>
          </table><br>
-            <a class="customize" href="customize sD.php">customize</a>
+            <a class="customize" href="second year/customize sD.php">customize</a>
          </div>
          <?php
          
          $select = mysqli_query($conn, "SELECT * FROM `section e`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION E</H1>
+            <H2> SECTION E</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -229,21 +233,21 @@ if(isset($_GET['delete'])){
                <td><?php echo $row['room']; ?></td>
                <td>
                   <a href="section_update sE.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
-                  <a href="section.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                  <a href="section2.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
                </td>
             </tr>
          <?php } ?>
          </table><br>
-            <a class="customize" href="customize sE.php">customize</a>
+            <a class="customize" href="second year/customize sE.php">customize</a>
          </div>
          <?php
          
          $select = mysqli_query($conn, "SELECT * FROM `section f`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION F</H1>
+            <H2> SECTION F</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -263,12 +267,12 @@ if(isset($_GET['delete'])){
                <td><?php echo $row['room']; ?></td>
                <td>
                   <a href="section_update sF.php?edit=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> edit </a>
-                  <a href="section.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                  <a href="section2.php?delete=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-trash"></i> delete </a>
                </td>
             </tr>
          <?php } ?>
          </table><br>
-            <a class="customize" href="customize sF.php">customize</a>
+            <a class="customize" href="second year/customize sF.php">customize</a>
          </div>
       </div>
   </form>

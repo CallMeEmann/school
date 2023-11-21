@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
       $upload = mysqli_query($conn, $update_data);
 
       if($upload){
-         header('location:section.php');
+         header('location:section1.php');
       }else{
          $message[] = 'please fill out all!'; 
       }

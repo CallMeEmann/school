@@ -12,7 +12,7 @@
         $query=mysqli_query($conn, $insert);
 
         $sql = "SELECT * FROM `section e` WHERE username = '$section '";
-        header('location:section.php');
+        header('location:section1.php');
 
     }
     
@@ -52,7 +52,7 @@ if(isset($message)){
          <input type="text" placeholder="add course time ex(9:00-10:00)" name="course_time" class="box"  required>
          <input type="text" placeholder="room ex(COE room 102)" name="room" class="box"  required>
          <input type="submit" class="btn"  name="submit" value="submit">
-         <a href="section.php" class="btn">go back!</a>
+         <a href="section1.php" class="btn">go back!</a>
       </form>
         
       </form>

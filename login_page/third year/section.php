@@ -45,6 +45,26 @@ if(isset($_GET['delete'])){
 
 </head>
 <body>
+   <div class="video-background">
+    <video autoplay loop muted>
+      <source src="classroom vid.mp4" type="video/mp4">
+    </video>
+  </div>
+ <H1 style="font-size: 50px;">FIRST SEM</H1>
+ <form action="" method="submit">
+    <div class="search" style=" margin-left: 50px;"> 
+       <div class="search-box">
+          <input type="text" placeholder="Type to search.." name="submit">
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="cancel-icon">
+            <i class="fas fa-times"></i>
+          </div>
+            <div class="search-data">
+          </div>
+       </div>
+ </form>
  <H1 style="font-size: 50px;">FIRST SEM</H1>
   <form action="" method="post">
      <div class="box">
@@ -53,9 +73,9 @@ if(isset($_GET['delete'])){
          $select = mysqli_query($conn, "SELECT * FROM `section a`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION A</H1>
+            <H2> SECTION A</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -86,9 +106,9 @@ if(isset($_GET['delete'])){
          <?php      
          $select = mysqli_query($conn, "SELECT * FROM `section b`");
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION B</H1>
+            <H2> SECTION B</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -119,9 +139,9 @@ if(isset($_GET['delete'])){
          <?php      
          $select = mysqli_query($conn, "SELECT * FROM `section c`");
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION c</H1>
+            <H2> SECTION C</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -153,9 +173,9 @@ if(isset($_GET['delete'])){
          $select = mysqli_query($conn, "SELECT * FROM `section d`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION D</H1>
+            <H2> SECTION D</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -187,9 +207,9 @@ if(isset($_GET['delete'])){
          $select = mysqli_query($conn, "SELECT * FROM `section e`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION E</H1>
+            <H2> SECTION E</H2>
             <thead>
             <tr>
                <th>teacher</th>
@@ -221,9 +241,9 @@ if(isset($_GET['delete'])){
          $select = mysqli_query($conn, "SELECT * FROM `section f`");
 
          ?>
-         <div class="display">
+         <div class="display" style="margin-right: 20px;">
          <table class="display-table">
-            <H1> SECTION F</H1>
+            <H2> SECTION F</H2>
             <thead>
             <tr>
                <th>teacher</th>

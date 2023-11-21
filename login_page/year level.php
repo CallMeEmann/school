@@ -1,9 +1,9 @@
 <?Php
     if(isset($_POST["submit1"])){
-        header('location:first year/section.php');
+        header('location:first year/section1.php');
     }
     if(isset($_POST["submit2"])){
-        header('location:second year/section.php');
+        header('location:second year/section2.php');
     }
     if(isset($_POST["submit3"])){
         header('location:third year/section.php');

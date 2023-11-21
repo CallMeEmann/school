@@ -12,7 +12,7 @@
         $query=mysqli_query($conn, $insert);
 
         $sql = "SELECT * FROM `section a` WHERE section = '$section'";
-        header('location:section.php');
+        header('location:section1.php');
 
     }
     
