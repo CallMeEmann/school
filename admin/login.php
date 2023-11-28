@@ -1,29 +1,4 @@
 
-<?php
-    include_once("database.php");
-    
- 
-    if (isset($_POST["login"])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-    
-        $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
-        $result = $conn->query($sql);
-    
-        if ($result->num_rows == 1) {
-            $_SESSION['username'] = $username;
-            header("Location: year level.php");
-        }else{  
-            echo  '<script>
-                        window.location.href = "login.php";
-                        alert("Login failed. Invalid username or password!!")
-                    </script>';
-        }     
-            
-        $conn->close();
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +16,11 @@
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <form method="post">
-                    <h1>Create Account</h1>
-                    <span>please make you'r account</span>
+                    <h1 style="font-size: 35px;">Create Account</h1>
+                    <p>please make you'r account</p>
                     
+                    <input type="email" placeholder="email" name="email" id="email" required />
                     <input type="text" placeholder="fullname" name="fullname" id="fullname" required />
-                    <input type="text" placeholder="username" name="username" id="username" required/>
                     <input type="password" placeholder="Password" name="password" id="password" required/>
                     <button type="submit" name="submit">Sign Up</button>
                 </form>
@@ -60,9 +35,12 @@
                     </div>
                     </div>
                     <span>PLSP FB PAGE</span>
-                    <input type="text" placeholder="username" name="username"/>
+                    <input type="text" placeholder="email" name="email"/>
                     <input type="password" placeholder="Password" name="password" />
-                    <a href="forgotpass.php">Forgot your password?</a>
+                    
+                    <a href="forgotpass.php" class="btn"> forgot password? </a>
+                    
+
                     <button type="submit" value="login" name="login" >Sign In</button>
                 </form>
             </div>
@@ -101,20 +79,55 @@
 	container.classList.remove("right-panel-active");
 });
 </script>
+
+<?php
+    include_once("database.php");
+    
+ 
+    if (isset($_POST["login"])) {
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    
+        $sql = "SELECT * FROM admin WHERE email='$email' and password = '$password'";
+        $result = $conn->query($sql);
+    
+        if ($result->num_rows == 1) {
+            $_SESSION['email'] = $email;
+            header("Location: year level.php");
+        }else{  
+            ?>
+            <script>
+            
+            swal({
+                title: "sorry 😔",
+                text: "Invalid username or password!!",
+                icon: "error",
+                button: "okey",
+              });
+            </script>
+
+            <?php
+        }     
+            
+        $conn->close();
+}
+
+?>
 </html>
 
 <?php
     include("database.php");
     if(isset($_POST['submit'])){
+        $email = $_POST['email'];
         $fullname = $_POST['fullname'];
-        $username = $_POST['username'];
         $password = $_POST['password'];
         
-        $insert = "insert into user(fullname,username,password) values('$fullname', '$username','$password')";                                                                                                                                                                                                                                                               
+        $insert = "insert into admin( email,fullname,password) values('$email','$fullname','$password')";                                                                                                                                                                                                                                                               
 
         $query=mysqli_query($conn, $insert);
 
-        $sql = "SELECT * FROM user WHERE username = '$username'";
+        $sql = "SELECT * FROM admin WHERE username = '$username'";
      
         if($query){
 
@@ -135,4 +148,3 @@
     
 
 ?>
-

@@ -29,6 +29,12 @@ if(isset($_GET['delete'])){
    mysqli_query($conn, "DELETE FROM `section f` WHERE id = $id");
    header('location:section.php');
 };
+if(isset($_POST["back"])){
+   header('location:..//year level.php');
+}
+if(isset($_POST["logout"])){
+   header('location:..//login.php');
+}
 
 ?>
 
@@ -66,6 +72,10 @@ if(isset($_GET['delete'])){
        </div>
     </div>
  </form>
+ <form action="" method="post">
+     <button class="custom-btn btn-12" name="back"><span>okey😊</span><span>back</span></button>
+     <button class="custom-btn btn-12" name="logout"><span>bye😊</span><span>logout</span></button>
+  </form>
  <H1 style="font-size: 50px;">FIRST SEM</H1>
   <form action="" method="post">
      <div class="box" style="margin-left: 20px;">

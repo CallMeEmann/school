@@ -29,6 +29,12 @@ if(isset($_GET['delete'])){
    mysqli_query($conn, "DELETE FROM `section f` WHERE id = $id");
    header('location:section2.php');
 };
+if(isset($_POST["back"])){
+   header('location:..//year level.php');
+}
+if(isset($_POST["logout"])){
+   header('location:..//login.php');
+}
 
 ?>
 

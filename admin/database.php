@@ -2,8 +2,8 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$database = "loginform";
+$db = "loginform";
 
-$conn = mysqli_connect($server,$user, $pass, $database) ;
+$conn = mysqli_connect($server,$user, $pass, $db) ;
 
 ?>

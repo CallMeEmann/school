@@ -31,10 +31,10 @@ if(isset($_GET['delete'])){
 };
 
 if(isset($_POST["back"])){
-   header('location:year level.php');
+   header('location:..//year level.php');
 }
 if(isset($_POST["logout"])){
-   header('location: login.php');
+   header('location:..//login.php');
 }
 
 ?>

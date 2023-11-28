@@ -30,6 +30,14 @@ if(isset($_GET['delete'])){
    header('location:section.php');
 };
 
+if(isset($_POST["back"])){
+   header('location:..//year level.php');
+}
+if(isset($_POST["logout"])){
+   header('location:..//login.php');
+}
+
+
 ?>
 
 
@@ -41,7 +49,7 @@ if(isset($_GET['delete'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>admin page</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <link rel="stylesheet" href="section.css">
+   <link rel="stylesheet" href="section1.css">
 
 </head>
 <body>
@@ -66,8 +74,12 @@ if(isset($_GET['delete'])){
        </div>
      </div>
  </form>
+ <form action="" method="post">
+     <button class="custom-btn btn-12" name="back"><span>okey😊</span><span>back</span></button>
+     <button class="custom-btn btn-12" name="logout"><span>bye😊</span><span>logout</span></button>
+  </form>
   <form action="" method="post">
-     <div class="box">
+     <div class="box" style="margin-left: 10px;">
          <?php
          
          $select = mysqli_query($conn, "SELECT * FROM `section a`");
